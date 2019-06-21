@@ -1,6 +1,7 @@
 package com.vehicles.project;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Car extends Vehicle {
 
@@ -8,6 +9,7 @@ public class Car extends Vehicle {
 		super(plate, brand, color);
 	}
 
+	@Override
 	public void addWheels(List<Wheel> frontWheels, List<Wheel> backWheels) throws Exception {
 		addTwoWheels(frontWheels);
 		addTwoWheels(backWheels);
@@ -26,5 +28,7 @@ public class Car extends Vehicle {
 		this.wheels.add(leftWheel);
 		this.wheels.add(rightWheel);
 	}
+
+
 
 }
