@@ -12,7 +12,8 @@ public class VehicleProject {
 		String color;
 		int typeOfVehicle;
 		String brandWheel;
-		int diamWheel;
+		double diamWheel;
+	
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -22,7 +23,7 @@ public class VehicleProject {
 		
 		typeOfVehicle = Integer.parseInt(sc.nextLine());
 		
-		System.out.println("Introdueix la matrícula del vehicle: ");
+		System.out.println("Introdueix la matrï¿½cula del vehicle: ");
 		
 		plate = sc.nextLine();
 		
@@ -45,14 +46,16 @@ public class VehicleProject {
 				
 				brandWheel = sc.nextLine();
 				
-				System.out.println("Introdueix diàmetre de la roda: ");
+				System.out.println("Introdueix diï¿½metre de la roda: ");
 				
 				diamWheel = Integer.parseInt(sc.nextLine());
 				
 				Wheel frontWheel = new Wheel(brandWheel, diamWheel);
 				Wheel backWheel = new Wheel(brandWheel, diamWheel);
 				
-				cotxe1.addWheels(frontWheel, backWheel);
+				System.out.println(cotxe1.getVehicleData());				
+				cotxe1.setFrontWheel(frontWheel);			
+				cotxe1.setBackWheel(backWheel);
 				
 				break;
 		
@@ -64,7 +67,6 @@ public class VehicleProject {
 		}
 		
 		
-
 
 	}
 	
