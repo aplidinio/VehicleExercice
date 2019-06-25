@@ -11,27 +11,24 @@ public class VehicleProject {
 		String brand;
 		String color;
 		int typeOfVehicle;
-		String brandWheel;
-		double diamWheel;
-	
-		
+					
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Introdueix vehicle:");
-		System.out.println("1.- Cotxe");
-		System.out.println("2.- Moto");
+		System.out.println("Please enter vehicle:");
+		System.out.println("1.- Car");
+		System.out.println("2.- Bike");
 		
 		typeOfVehicle = Integer.parseInt(sc.nextLine());
 		
-		System.out.println("Introdueix la matr�cula del vehicle: ");
+		System.out.println("Please input vehicle plate: ");
 		
 		plate = sc.nextLine();
 		
-		System.out.println("Introdueix la marca del vehicle: ");
+		System.out.println("Please input vehicle brand: ");
 		
 		brand = sc.nextLine();
 		
-		System.out.println("Introdueix el color del vehicle: ");
+		System.out.println("Please input vehicle color: ");
 		
 		color = sc.nextLine();
 						
@@ -39,34 +36,28 @@ public class VehicleProject {
 		
 			case 1:
 		
-				Vehicle cotxe1 = new Car(plate, brand, color);
+				Vehicle car1 = new Car(plate, brand, color);
 				
-				System.out.println("Rodes davanteres: ");
-				System.out.println("Introdueix marca: ");
+				System.out.println("Please input front wheel data.");				
+				car1.configureWheel();	
 				
-				brandWheel = sc.nextLine();
+				System.out.println("Please input back wheel data.");
+				car1.configureWheel();  
 				
-				System.out.println("Introdueix di�metre de la roda: ");
-				
-				diamWheel = Integer.parseInt(sc.nextLine());
-				
-				Wheel frontWheel = new Wheel(brandWheel, diamWheel);
-				Wheel backWheel = new Wheel(brandWheel, diamWheel);
-				
-				System.out.println(cotxe1.getVehicleData());				
-				cotxe1.setFrontWheel(frontWheel);			
-				cotxe1.setBackWheel(backWheel);
-				
+				System.out.println(car1.getVehicleData());				
+				System.out.println("Your vehicle has front wheels of " + car1.getWheel(0));
+				System.out.println("Your vehicle has back wheels of " + car1.getWheel(1));
+								
 				break;
 		
 			case 2:
 				
-				Vehicle moto1= new Bike(plate, brand, color);
+				Vehicle bike1= new Bike(plate, brand, color);
 				
 				break;
 		}
 		
-		
+		sc.close();
 
 	}
 	

@@ -1,7 +1,6 @@
 package com.vehicles.project;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public abstract class Vehicle {
 
@@ -16,39 +15,40 @@ public abstract class Vehicle {
 		this.color = color;
 	}
 	
+	public abstract void addWheels(List<Wheel> frontWheels, List<Wheel> backWheels) throws Exception;
+	
 	public Vehicle(List<Wheel> wheels) {
 		this.wheels = wheels;
 	}
 	
-	public void setFrontWheel(Wheel frontWheel) {
-		wheels.add(frontWheel);
-		System.out.println("El teu vehicle té rodes davanteres " + wheels.get(0));
+	public void configureWheel( ) {
+				
+		Scanner sc = new Scanner(System.in);
+				
+		System.out.println("Input wheel brand: ");
+		brandWheel = sc.nextLine();
+		
+		System.out.println("Input wheel diametre: ");
+		diamWheel = Integer.parseInt(sc.nextLine());
+		
+		Wheel myWheel = new Wheel(brandWheel, diamWheel);
+		wheels.add(myWheel);
+	}
+	
+	public String getWheel(int myWheel) {
+				
+		return wheels.get(myWheel).getWheelData();
 	}	
 		
-	public void setBackWheel(Wheel backWheel) {
-		wheels.add(backWheel);
-		System.out.println("El teu vehicle té rodes traseres " + wheels.get(1));
-	}
-	
 	public String getVehicleData() {
 		
-		return "El teu vehicle és un " + brand + ", és de color "
-		+ color + " i té matrícula " + plate;
-	}
-	
-	public String getWheelData() {
+		return "Your vehicle is a " + brand + ", his color is "
+				+ color + " and his plate is " + plate;
 		
-		return "El teu vehicle té rodes de " + wheel. + " polsades y són de la marca " + brand;
-	}
+	}	
 	
-	//public Vehicle(List<Wheel> frontWheels, List<Wheel> backWheels) {
-	//	this.wheels.addAll(frontWheels);
-		
-	
+	protected String brandWheel;
+	protected double diamWheel;
 
-	public abstract void addWheels(List<Wheel> frontWheels, List<Wheel> backWheels) throws Exception;
 	
-	//public abstract void addWheels();
-	
-		
 }

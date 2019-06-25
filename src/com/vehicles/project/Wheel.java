@@ -11,7 +11,7 @@ public class Wheel {
 	
 	public String getWheelData() {
 		
-		return "El teu vehicle té rodes de " + diameter + " polsades y són de la marca " + brand;
+		return diameter + " inches and his brand is " + brand;
 	}
 	
 	
