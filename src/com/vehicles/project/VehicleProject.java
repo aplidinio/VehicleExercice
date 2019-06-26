@@ -13,12 +13,7 @@ public class VehicleProject {
 		String brand;
 		String color;
 		int typeOfVehicle;
-		Wheel frontLeft;
-		Wheel frontRight;
-		Wheel backLeft;
-		Wheel backRight;
-		
-					
+							
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Please enter vehicle:");
@@ -56,7 +51,14 @@ public class VehicleProject {
 				backWheels.add(car1.askWheel());
 				System.out.println("Please input back-right wheel data.");				
 				backWheels.add(car1.askWheel());
-										
+				
+			try {
+				car1.addWheels(frontWheels, backWheels);
+			} catch (Exception e) {
+				System.out.println(e);	
+				e.printStackTrace();
+			}
+				
 				System.out.println(car1.getVehicleData());				
 				System.out.println("Your vehicle has front-left wheel of " + frontWheels.get(0).getWheelData());
 				System.out.println("Your vehicle has front-right wheel of " + frontWheels.get(1).getWheelData());

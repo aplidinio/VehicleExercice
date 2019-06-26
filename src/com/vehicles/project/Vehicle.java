@@ -35,7 +35,7 @@ public abstract class Vehicle {
 		diamWheel = Integer.parseInt(sc.nextLine());
 				
 		Wheel myWheel = new Wheel(brandWheel, diamWheel);
-		//wheels.add(myWheel);
+		
 		return myWheel;
 		
 	}
