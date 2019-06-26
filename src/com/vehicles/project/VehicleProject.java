@@ -1,5 +1,7 @@
 package com.vehicles.project;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class VehicleProject {
@@ -11,6 +13,11 @@ public class VehicleProject {
 		String brand;
 		String color;
 		int typeOfVehicle;
+		Wheel frontLeft;
+		Wheel frontRight;
+		Wheel backLeft;
+		Wheel backRight;
+		
 					
 		Scanner sc = new Scanner(System.in);
 		
@@ -37,16 +44,24 @@ public class VehicleProject {
 			case 1:
 		
 				Vehicle car1 = new Car(plate, brand, color);
+				List<Wheel> frontWheels = new ArrayList<Wheel>();
+				List<Wheel> backWheels = new ArrayList<Wheel>();
 				
-				System.out.println("Please input front wheel data.");				
-				car1.configureWheel();	
+				System.out.println("Please input front-left wheel data.");				
+				frontWheels.add(car1.askWheel());
+				System.out.println("Please input front-light wheel data.");				
+				frontWheels.add(car1.askWheel());
 				
-				System.out.println("Please input back wheel data.");
-				car1.configureWheel();  
-				
+				System.out.println("Please input back-left wheel data.");				
+				backWheels.add(car1.askWheel());
+				System.out.println("Please input back-right wheel data.");				
+				backWheels.add(car1.askWheel());
+										
 				System.out.println(car1.getVehicleData());				
-				System.out.println("Your vehicle has front wheels of " + car1.getWheel(0));
-				System.out.println("Your vehicle has back wheels of " + car1.getWheel(1));
+				System.out.println("Your vehicle has front-left wheel of " + frontWheels.get(0).getWheelData());
+				System.out.println("Your vehicle has front-right wheel of " + frontWheels.get(1).getWheelData());
+				System.out.println("Your vehicle has back-left wheel of " + backWheels.get(0).getWheelData());
+				System.out.println("Your vehicle has back-right wheel of " + backWheels.get(1).getWheelData());
 								
 				break;
 		

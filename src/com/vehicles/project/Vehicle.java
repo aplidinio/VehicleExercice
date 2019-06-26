@@ -8,6 +8,9 @@ public abstract class Vehicle {
 	protected String brand;
 	protected String color;
 	protected List<Wheel> wheels = new ArrayList<Wheel>();
+	protected String brandWheel;
+	protected double diamWheel;
+	
 
 	public Vehicle(String plate, String brand, String color) {
 		this.plate = plate;
@@ -21,7 +24,7 @@ public abstract class Vehicle {
 		this.wheels = wheels;
 	}
 	
-	public void configureWheel( ) {
+	public Wheel askWheel( ) {
 				
 		Scanner sc = new Scanner(System.in);
 				
@@ -30,10 +33,14 @@ public abstract class Vehicle {
 		
 		System.out.println("Input wheel diametre: ");
 		diamWheel = Integer.parseInt(sc.nextLine());
-		
+				
 		Wheel myWheel = new Wheel(brandWheel, diamWheel);
-		wheels.add(myWheel);
+		//wheels.add(myWheel);
+		return myWheel;
+		
 	}
+	
+	
 	
 	public String getWheel(int myWheel) {
 				
@@ -46,9 +53,5 @@ public abstract class Vehicle {
 				+ color + " and his plate is " + plate;
 		
 	}	
-	
-	protected String brandWheel;
-	protected double diamWheel;
-
 	
 }
