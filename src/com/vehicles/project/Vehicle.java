@@ -41,7 +41,6 @@ public abstract class Vehicle {
 	}
 	
 	
-	
 	public String getWheel(int myWheel) {
 				
 		return wheels.get(myWheel).getWheelData();

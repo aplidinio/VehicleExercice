@@ -52,12 +52,13 @@ public class VehicleProject {
 				System.out.println("Please input back-right wheel data.");				
 				backWheels.add(car1.askWheel());
 				
-			try {
-				car1.addWheels(frontWheels, backWheels);
-			} catch (Exception e) {
-				System.out.println(e);	
-				e.printStackTrace();
-			}
+				try {
+					car1.addWheels(frontWheels, backWheels);
+				} catch (Exception e) {
+					System.out.println("You can't put front wheels or back wheels of different brand/diametre!");
+					System.out.println(e);	
+					e.printStackTrace();
+				}
 				
 				System.out.println(car1.getVehicleData());				
 				System.out.println("Your vehicle has front-left wheel of " + frontWheels.get(0).getWheelData());
