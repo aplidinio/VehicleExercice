@@ -13,7 +13,8 @@ public class VehicleProject {
 		String brand;
 		String color;
 		int typeOfVehicle;
-							
+		Vehicle myVehicle= new Car("", "", "");
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Please enter vehicle:");
@@ -22,14 +23,24 @@ public class VehicleProject {
 		
 		typeOfVehicle = Integer.parseInt(sc.nextLine());
 		
-		System.out.println("Please input vehicle plate: ");
+		do {
 		
-		plate = sc.nextLine();
+			System.out.println("Please input vehicle plate: ");
+		
+			plate = sc.nextLine();
+				
+			myVehicle.evaluatePlate(plate);
+			
+			if((myVehicle.evaluatePlate(plate) == false))
+					System.out.println("Illegal vehicle plate.");
+			
+		} while (myVehicle.evaluatePlate(plate) == false);
+			
 		
 		System.out.println("Please input vehicle brand: ");
 		
 		brand = sc.nextLine();
-		
+			
 		System.out.println("Please input vehicle color: ");
 		
 		color = sc.nextLine();
@@ -44,7 +55,7 @@ public class VehicleProject {
 				
 				System.out.println("Please input front-left wheel data.");				
 				frontWheels.add(car1.askWheel());
-				System.out.println("Please input front-light wheel data.");				
+				System.out.println("Please input front-right wheel data.");				
 				frontWheels.add(car1.askWheel());
 				
 				System.out.println("Please input back-left wheel data.");				

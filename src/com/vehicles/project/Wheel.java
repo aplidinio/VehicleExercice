@@ -13,7 +13,6 @@ public class Wheel {
 		
 		return diameter + " inches and his brand is " + brand;
 	}
-
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -33,7 +32,5 @@ public class Wheel {
 			return false;
 		return true;
 	}
-	
-	
-	
+		
 }
