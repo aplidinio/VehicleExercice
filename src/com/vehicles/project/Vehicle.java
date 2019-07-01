@@ -43,8 +43,8 @@ public abstract class Vehicle {
 		} while (evaluateWheel(diamWheel)==false);
 				
 		Wheel myWheel = new Wheel(brandWheel, diamWheel);
+		
 		return myWheel;
-		//¿POR QUÉ NO PUEDO CERRAR EL SCANNER? ERROR DEL NEXTLINE.
 	}	
 	
 	public String getWheel(int myWheel) {
@@ -59,7 +59,7 @@ public abstract class Vehicle {
 		
 	}
 	
-	public boolean evaluatePlate (String plate) {
+	public boolean evaluatePlate (String plate) { //hay libreria pattern de java que lo simplifica
 						
 		if (plate.length()!=7 && plate.length()!=8) return false; 
 							
